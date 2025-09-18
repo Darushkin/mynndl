@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Titanic EDA - Factors of Death</title>
+  <script src="https://cdn.jsdelivr.net/npm/papaparse@5.4.1/papaparse.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <style>
+    body { font-family: Arial, sans-serif; margin: 20px; }
+    h1, h2 { color: #2c3e50; }
+    section { margin-bottom: 30px; }
+    input { margin: 10px 0; }
+    canvas { max-width: 600px; margin: 20px auto; display: block; }
+    table { border-collapse: collapse; margin-top: 15px; }
+    th, td { border: 1px solid #ddd; padding: 6px 12px; }
+    th { background: #f0f0f0; }
+    .btn { padding: 8px 14px; margin-top: 10px; background: #3498db; color: white; border: none; border-radius: 6px; cursor: pointer; }
+    .btn:hover { background: #2980b9; }
+    #result { font-weight: bold; color: #e74c3c; margin-top: 20px; }
+  </style>
+</head>
+<body>
+  <h1>Titanic EDA: Factors of Death</h1>
+  
+  <section>
+    <h2>1. Load Data</h2>
+    <p>Upload <code>train.csv</code> (with Survived column)</p>
+    <input type="file" id="trainFile">
+    <button class="btn" id="loadBtn">Load Data</button>
+    <div id="dataPreview"></div>
+  </section>
+
+  <section>
+    <h2>2. Missing Values</h2>
+    <canvas id="missingChart"></canvas>
+  </section>
+
+  <section>
+    <h2>3. Survival Analysis by Feature</h2>
+    <canvas id="sexChart"></canvas>
+    <canvas id="pclassChart"></canvas>
+    <canvas id="ageChart"></canvas>
+    <canvas id="embarkedChart"></canvas>
+  </section>
+
+  <section>
+    <h2>4. Key Factor of Death</h2>
+    <p id="result">Run analysis to see the strongest death predictor...</p>
+    <button class="btn" id="analyzeBtn">Find Most Important Factor</button>
+  </section>
+
+  <section>
+    <h2>Deployment Note</h2>
+    <p>Create public GitHub repo, commit <code>index.html</code> and <code>app.js</code>, enable GitHub Pages (main/root), test your URL.</p>
+  </section>
+
+  <script src="app.js"></script>
+</body>
+</html>
